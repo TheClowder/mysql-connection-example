@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  db:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: P4Ssw0rD!
+
+  go:
+    image: golang:1.7.5
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /go/src/github.com/root/
+    volumes:
+      - .:/go/src/github.com/root/
+    stdin_open: true
+    tty: true
+    links:
+      - db
