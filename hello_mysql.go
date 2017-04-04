@@ -3,12 +3,11 @@ package main
 import (
     "database/sql"
     "log"
-		"fmt"
     _"github.com/go-sql-driver/mysql"
 )
 
 func main() {
-    db, err := sql.Open("mysql", "root:@tcp(:3306)/test")
+	db, err := sql.Open("mysql", "root:P4Ssw0rD!@tcp(172.20.0.2:3306)/test")
     if err != nil {
         log.Fatal(err)
     }
